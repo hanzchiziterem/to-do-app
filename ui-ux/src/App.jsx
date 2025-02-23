@@ -1,5 +1,5 @@
 import { useState } from 'react'
-
+import './App.css'
 function App() {
   const [task, setTask] = useState('')
   const handleSubmit = (e) => {
@@ -21,7 +21,7 @@ function App() {
       </div>
 
       <div className="todo-task-container">
-        
+
       </div>
      </div>
     </>
