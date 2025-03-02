@@ -1,8 +1,8 @@
 import { FaTimes } from "react-icons/fa";
 
-const TodoList = ({ todos, onDelete }) => {
+const TodoList = ({ todos, onDelete, onToggle }) => {
   return (
-    <div className="todo">
+    <div className={`todo ${todos.reminder ? 'reminder': ''}`} onDoubleClick={()=> onToggle(todos.id)}>
       <h3>
         {todos.todo}
         <FaTimes

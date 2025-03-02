@@ -41,6 +41,14 @@ function App() {
   const deleteTodo = (id) => {
     setTodoLists(todoLists.filter((todo) => todo.id !== id));
   };
+
+  const toggleReminder = (id) => {
+    setAddTask(
+      todoLists.map((todo) =>
+        todo.id === id ? { ...addTask, reminder: !todo.reminder } : addTask
+      )
+    );
+  };
   return (
     <>
       <Navbar />
@@ -49,7 +57,11 @@ function App() {
         <TodoForm addTask={addTask} setAddTask={setAddTask} />
         <div className="todo-container">
           {todoLists.length > 0 ? (
-            <TodoLists todoLists={todoLists} onDelete={deleteTodo} />
+            <TodoLists
+              todoLists={todoLists}
+              onDelete={deleteTodo}
+              onToggle={toggleReminder}
+            />
           ) : (
             "There is no Todo list."
           )}
