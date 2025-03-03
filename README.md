@@ -1,2 +1,2 @@
 # React Todo App
-a react todo app
+a mern stack application 
